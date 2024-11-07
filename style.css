@@ -1,16 +1,22 @@
+/* Importa la fuente "Press Start 2P" de Google Fonts para darle un estilo retro al texto */
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 
+/* Aplica el margen y padding de todos los elementos a 0 y hereda `box-sizing` para un control más uniforme del tamaño de los elementos */
 * {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
 }
 
+/* Ajusta el tamaño base de fuente al 62.5% para que 1rem sea igual a 10px, facilitando cálculos de tamaño,
+   y establece `box-sizing` como `border-box` para que el padding y borde se incluyan en el tamaño total de los elementos */
 html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
 
+/* Define la fuente para todo el cuerpo del documento, color de texto claro (`#eee`) y fondo oscuro (`#222`).
+   La línea comentada proporciona una opción alternativa de fondo verde */
 body {
   font-family: 'Press Start 2P', sans-serif;
   color: #eee;
@@ -18,13 +24,14 @@ body {
   /* background-color: #60b347; */
 }
 
-/* LAYOUT */
+/* Establece la cabecera (`header`) con una altura de 35% del alto de la ventana y un borde inferior grueso para separar el área principal */
 header {
   position: relative;
   height: 35vh;
   border-bottom: 7px solid #eee;
 }
 
+/* La sección principal ocupa el 65% de la altura de la ventana, centra su contenido y usa `flex` para distribuir elementos en el espacio disponible */
 main {
   height: 65vh;
   color: #eee;
@@ -33,19 +40,24 @@ main {
   justify-content: space-around;
 }
 
-.left {
+/* Define un ancho fijo para las secciones izquierda y derecha */
+.left, .right {
   width: 52rem;
+}
+
+/* La sección izquierda organiza su contenido en una columna centrada */
+.left {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Establece el tamaño de fuente en la sección derecha para los elementos de puntuación y mensajes */
 .right {
-  width: 52rem;
   font-size: 2rem;
 }
 
-/* ELEMENTS STYLE */
+/* Centra el título del juego con un tamaño de fuente grande, colocándolo en el centro del `header` */
 h1 {
   font-size: 4rem;
   text-align: center;
@@ -56,6 +68,7 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
+/* Estilo para el cuadro que muestra el número a adivinar: fondo claro y color de texto oscuro, centrado al final del `header` */
 .number {
   background: #eee;
   color: #333;
@@ -69,6 +82,7 @@ h1 {
   transform: translate(-50%, 50%);
 }
 
+/* Posiciona el rango de número (entre 1 y 20) en la esquina superior derecha del `header` */
 .between {
   font-size: 1.4rem;
   position: absolute;
@@ -76,12 +90,14 @@ h1 {
   right: 2rem;
 }
 
+/* Coloca el botón "Again!" en la esquina superior izquierda del `header` */
 .again {
   position: absolute;
   top: 2rem;
   left: 2rem;
 }
 
+/* Estilo para el campo de entrada de la suposición: fondo transparente, borde grueso, texto grande y centrado, con margen inferior */
 .guess {
   background: none;
   border: 4px solid #eee;
@@ -95,6 +111,7 @@ h1 {
   margin-bottom: 3rem;
 }
 
+/* Define el estilo básico para los botones con fondo claro, texto oscuro y cursor de puntero */
 .btn {
   border: none;
   background-color: #eee;
@@ -105,15 +122,18 @@ h1 {
   cursor: pointer;
 }
 
+/* Cambia el color de fondo de los botones al pasar el cursor para indicar interactividad */
 .btn:hover {
   background-color: #ccc;
 }
 
+/* Espacio inferior grande y altura fija para el mensaje, donde se mostrará el estado del juego */
 .message {
   margin-bottom: 8rem;
   height: 3rem;
 }
 
+/* Agrega un margen inferior para separar la puntuación del resto de los elementos */
 .label-score {
   margin-bottom: 2rem;
 }
