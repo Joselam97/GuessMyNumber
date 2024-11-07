@@ -31,7 +31,7 @@ document.querySelector('.check').addEventListener('click', function(){
     if(!guess){
         document.querySelector('.message').textContent = "🚫 No Number!";
 
-    //Jugador Gana
+    //Cuando guess es Correcto
     } else if (guess === randomNumber){
         document.querySelector('.message').textContent = '🎉 Correct Number!';
         document.querySelector('.number').textContent = randomNumber;
@@ -48,29 +48,10 @@ document.querySelector('.check').addEventListener('click', function(){
             document.querySelector('.highscore').textContent = highscore;
         }
 
-
-    //Numero mas alto
-    } else if (guess > randomNumber){
-
-        //Va reduciendo score
+    //Cuando es guess es Incorrecto
+    } else if(guess !== randomNumber) {
         if(score > 1){
-            document.querySelector('.message').textContent = "📈 Too High!";
-            score--;
-            document.querySelector('.score').textContent = score;
-        //Score llega a 0
-        } else {
-            document.querySelector('.message').textContent = "💀 Game Over!";
-            document.querySelector('.score').textContent = 0;
-            //Cambia el color de fondo a rojo cuando se gana
-            document.querySelector('body').style.backgroundColor = '#ff4d4d';
-        }
-
-    //Numero mas bajo
-    } else if(guess < randomNumber){
-
-        //Va reduciendo score
-        if(score > 1){
-            document.querySelector('.message').textContent = "📉 Too Low!";
+            document.querySelector('.message').textContent = guess > randomNumber ? "📈 Too High!" : "📉 Too Low!";
             score--;
             document.querySelector('.score').textContent = score;
         //Score llega a 0
@@ -81,4 +62,5 @@ document.querySelector('.check').addEventListener('click', function(){
             document.querySelector('body').style.backgroundColor = '#ff4d4d';
         }
     }
+
 });
