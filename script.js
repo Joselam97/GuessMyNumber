@@ -1,13 +1,27 @@
 'use strict';
 
-const randomNumber = Math.trunc(Math.random()*20) + 1;
-document.querySelector('.number').textContent = randomNumber;
-
+let randomNumber = Math.trunc(Math.random()*20) + 1;
 let score = 10;
+
+document.querySelector('.again').addEventListener('click', function(){
+    //Usa los valores como referencia
+    score = 10;
+    randomNumber = Math.trunc(Math.random()*20) + 1;
+
+    //Regresa los mensajes y valores a la normalidad
+    document.querySelector('.message').textContent = "Start guessing..."
+    document.querySelector('.score').textContent = score;
+    document.querySelector('.number').textContent = "?";
+    document.querySelector('.guess').value = "";
+
+    //Cambia el estilo a la normalidad
+    document.querySelector('body').style.backgroundColor = '#222';
+    document.querySelector('.number').style.width = '15rem';
+})
 
 //Manipula el boton "Check" y el numero que ingresamos lo pasa a Integer
 document.querySelector('.check').addEventListener('click', function(){
-    const guess = Number(document.querySelector('.guess').value);
+    let guess = Number(document.querySelector('.guess').value);
     console.log(guess);
 
     //No hay input
@@ -17,6 +31,7 @@ document.querySelector('.check').addEventListener('click', function(){
     //Jugador Gana
     } else if (guess === randomNumber){
         document.querySelector('.message').textContent = '🎉Correct Number!';
+        document.querySelector('.number').textContent = randomNumber;
 
         //Cambia el color de fondo a verde cuando se gana
         document.querySelector('body').style.backgroundColor = '#60b347';
@@ -29,7 +44,7 @@ document.querySelector('.check').addEventListener('click', function(){
     } else if (guess > randomNumber){
 
         //Va reduciendo score
-        if(score > 0){
+        if(score > 1){
             document.querySelector('.message').textContent = "📈Too High!";
             score--;
             document.querySelector('.score').textContent = score;
@@ -45,7 +60,7 @@ document.querySelector('.check').addEventListener('click', function(){
     } else if(guess < randomNumber){
 
         //Va reduciendo score
-        if(score > 0){
+        if(score > 1){
             document.querySelector('.message').textContent = "📉Too Low!";
             score--;
             document.querySelector('.score').textContent = score;
