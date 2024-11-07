@@ -4,6 +4,10 @@ let randomNumber = Math.trunc(Math.random()*20) + 1;
 let score = 15;
 let highscore = 0;
 
+const displayMessage = function(message) {
+    document.querySelector('.message').textContent = message;
+}
+
 //Manipula el boton "Again"
 document.querySelector('.again').addEventListener('click', function(){
     //Usa los valores como referencia
@@ -29,11 +33,11 @@ document.querySelector('.check').addEventListener('click', function(){
 
     //No hay input
     if(!guess){
-        document.querySelector('.message').textContent = "🚫 No Number!";
+        displayMessage("🚫 No Number!");
 
     //Cuando guess es Correcto
     } else if (guess === randomNumber){
-        document.querySelector('.message').textContent = '🎉 Correct Number!';
+        displayMessage("🎉 Correct Number!");
         document.querySelector('.number').textContent = randomNumber;
 
         //Cambia el color de fondo a verde cuando se gana
@@ -50,13 +54,14 @@ document.querySelector('.check').addEventListener('click', function(){
 
     //Cuando es guess es Incorrecto
     } else if(guess !== randomNumber) {
+        //Operador tenario para enviar mensajes
         if(score > 1){
             document.querySelector('.message').textContent = guess > randomNumber ? "📈 Too High!" : "📉 Too Low!";
             score--;
             document.querySelector('.score').textContent = score;
         //Score llega a 0
         } else {
-            document.querySelector('.message').textContent = "💀 Game Over!";
+            displayMessage("💀 Game Over!");
             document.querySelector('.score').textContent = 0;
             //Cambia el color de fondo a rojo cuando se gana
             document.querySelector('body').style.backgroundColor = '#ff4d4d';
