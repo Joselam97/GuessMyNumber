@@ -52,7 +52,7 @@ document.querySelector('.check').addEventListener('click', function(){
             document.querySelector('.highscore').textContent = highscore;
         }
 
-    //Cuando es guess es Incorrecto
+    //Cuando guess es Incorrecto
     } else if(guess !== randomNumber) {
         //Operador tenario para enviar mensajes
         if(score > 1){
