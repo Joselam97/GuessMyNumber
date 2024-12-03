@@ -1,23 +1,23 @@
-/* Importa la fuente "Press Start 2P" de Google Fonts para darle un estilo retro al texto */
+/* Imports the "Press Start 2P" font from Google Fonts to give the text a retro style */
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 
-/* Aplica el margen y padding de todos los elementos a 0 y hereda `box-sizing` 
-para un control más uniforme del tamaño de los elementos */
+/* Applies margin and padding of all elements to 0 and inherits `box-sizing`
+   for more uniform control over element sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
 }
 
-/* Ajusta el tamaño base de fuente al 62.5% para que 1rem sea igual a 10px, facilitando cálculos de tamaño,
-   y establece `box-sizing` como `border-box` para que el padding y borde se incluyan en el tamaño total de los elementos */
+/* Adjusts the base font size to 62.5%, making 1rem equal to 10px for easier size calculations,
+   and sets `box-sizing` to `border-box` to include padding and border in the total element size */
 html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
 
-/* Define la fuente para todo el cuerpo del documento, color de texto claro (`#eee`) y fondo oscuro (`#222`).
-   La línea comentada proporciona una opción alternativa de fondo verde */
+/* Sets the font for the entire body, light text color (`#eee`) and dark background (`#222`).
+   The commented-out line provides an alternative green background */
 body {
   font-family: 'Press Start 2P', sans-serif;
   color: #eee;
@@ -25,16 +25,16 @@ body {
   /* background-color: #60b347; */
 }
 
-/* Establece la cabecera (`header`) con una altura de 35% del alto de la ventana y 
-un borde inferior grueso para separar el área principal */
+/* Sets the header (`header`) with a height of 35% of the viewport height and 
+   a thick bottom border to separate it from the main area */
 header {
   position: relative;
   height: 35vh;
   border-bottom: 7px solid #eee;
 }
 
-/* La sección principal ocupa el 65% de la altura de la ventana, centra su contenido y 
-usa `flex` para distribuir elementos en el espacio disponible */
+/* The main section occupies 65% of the viewport height, centers its content,
+   and uses `flex` to distribute elements across the available space */
 main {
   height: 65vh;
   color: #eee;
@@ -43,24 +43,24 @@ main {
   justify-content: space-around;
 }
 
-/* Define un ancho fijo para las secciones izquierda y derecha */
+/* Defines a fixed width for the left and right sections */
 .left, .right {
   width: 52rem;
 }
 
-/* La sección izquierda organiza su contenido en una columna centrada */
+/* The left section organizes its content in a vertically centered column */
 .left {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Establece el tamaño de fuente en la sección derecha para los elementos de puntuación y mensajes */
+/* Sets the font size in the right section for score and message elements */
 .right {
   font-size: 2rem;
 }
 
-/* Centra el título del juego con un tamaño de fuente grande, colocándolo en el centro del `header` */
+/* Centers the game title with a large font size, placing it in the center of the `header` */
 h1 {
   font-size: 4rem;
   text-align: center;
@@ -71,8 +71,8 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
-/* Estilo para el cuadro que muestra el número a adivinar: fondo claro y color de texto oscuro,
- centrado al final del `header` */
+/* Styles the box that displays the number to guess: light background, dark text color,
+   centered at the bottom of the `header` */
 .number {
   background: #eee;
   color: #333;
@@ -86,7 +86,7 @@ h1 {
   transform: translate(-50%, 50%);
 }
 
-/* Posiciona el rango de número (entre 1 y 20) en la esquina superior derecha del `header` */
+/* Positions the number range (between 1 and 20) in the top-right corner of the `header` */
 .between {
   font-size: 1.4rem;
   position: absolute;
@@ -94,15 +94,15 @@ h1 {
   right: 2rem;
 }
 
-/* Coloca el botón "Again!" en la esquina superior izquierda del `header` */
+/* Places the "Again!" button in the top-left corner of the `header` */
 .again {
   position: absolute;
   top: 2rem;
   left: 2rem;
 }
 
-/* Estilo para el campo de entrada de la suposición: fondo transparente, borde grueso, texto grande y centrado, 
-con margen inferior */
+/* Styles the input field for guesses: transparent background, thick border, large text,
+   centered, with bottom margin */
 .guess {
   background: none;
   border: 4px solid #eee;
@@ -116,7 +116,7 @@ con margen inferior */
   margin-bottom: 3rem;
 }
 
-/* Define el estilo básico para los botones con fondo claro, texto oscuro y cursor de puntero */
+/* Defines the basic style for buttons with light background, dark text, and a pointer cursor */
 .btn {
   border: none;
   background-color: #eee;
@@ -127,18 +127,19 @@ con margen inferior */
   cursor: pointer;
 }
 
-/* Cambia el color de fondo de los botones al pasar el cursor para indicar interactividad */
+/* Changes the background color of buttons on hover to indicate interactivity */
 .btn:hover {
   background-color: #ccc;
 }
 
-/* Espacio inferior grande y altura fija para el mensaje, donde se mostrará el estado del juego */
+/* Adds a large bottom margin and a fixed height to the message area 
+   where the game status will be displayed */
 .message {
   margin-bottom: 8rem;
   height: 3rem;
 }
 
-/* Agrega un margen inferior para separar la puntuación del resto de los elementos */
+/* Adds bottom margin to separate the score label from other elements */
 .label-score {
   margin-bottom: 2rem;
 }
